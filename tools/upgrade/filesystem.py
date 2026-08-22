@@ -83,7 +83,9 @@ class TargetCollector(builtin_ast.NodeVisitor):
     def _get_check_types(self, field: builtin_ast.keyword, check_types: bool) -> bool:
         value = field.value
         if field.arg == "check_types":
-            if isinstance(value, builtin_ast.Constant) and isinstance(value.value, bool):
+            if isinstance(value, builtin_ast.Constant) and isinstance(
+                value.value, bool
+            ):
                 return check_types or value.value
         return check_types
 
