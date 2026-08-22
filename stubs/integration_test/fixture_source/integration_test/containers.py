@@ -5,8 +5,9 @@
 
 # flake8: noqa
 
-from integration_test.taint import source, sink
 import collections
+
+from integration_test.taint import sink, source
 
 
 def dictionary_constructor(x: str):

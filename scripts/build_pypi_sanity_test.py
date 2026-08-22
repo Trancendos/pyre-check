@@ -126,9 +126,11 @@ def run_sanity_test(version: str, use_wheel: bool) -> None:
                 )
             production_assert(
                 errors and errors[0]["name"] == "Missing return annotation",
-                "Incorrect pyre errors returned."
-                if errors
-                else "Expected pyre errors but none returned.",
+                (
+                    "Incorrect pyre errors returned."
+                    if errors
+                    else "Expected pyre errors but none returned."
+                ),
             )
 
             # Confirm `pyre-upgrade` runs successfully.

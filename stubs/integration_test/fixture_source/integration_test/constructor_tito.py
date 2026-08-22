@@ -5,7 +5,7 @@
 
 # flake8: noqa
 
-from integration_test.taint import source, sink
+from integration_test.taint import sink, source
 
 
 class ParentWithConstructor:
@@ -22,7 +22,9 @@ class ParentWithoutConstructor: ...
 
 class ChildWithoutParentConstructor(ParentWithoutConstructor):
     def __init__(self, arg):
-        super(ChildWithoutParentConstructor, self).__init__(arg) # pyrefly: ignore[bad-argument-count]
+        super(ChildWithoutParentConstructor, self).__init__(
+            arg
+        )  # pyrefly: ignore[bad-argument-count]
 
 
 def test1():

@@ -7,7 +7,7 @@
 
 # Integration test for cache invalidation, see `run_cache_test.py`.
 
-from integration_test.taint import source, sink
+from integration_test.taint import sink, source
 
 
 def ignore_decorator(f):

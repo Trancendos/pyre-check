@@ -380,9 +380,11 @@ if __name__ == "__main__":
     sys.exit(
         run(
             arguments.repository_location,
-            None
-            if arguments.typeshed_path is None
-            else pathlib.Path(arguments.typeshed_path),
+            (
+                None
+                if arguments.typeshed_path is None
+                else pathlib.Path(arguments.typeshed_path)
+            ),
             arguments.debug,
         )
     )
