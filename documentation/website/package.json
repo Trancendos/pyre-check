@@ -20,13 +20,13 @@
     "@docusaurus/plugin-client-redirects": "2.1.0",
     "@docusaurus/plugin-google-gtag": "2.1.0",
     "@docusaurus/preset-classic": "2.1.0",
-    "axios": "0.30.3",
+    "axios": "0.33.0",
     "classnames": "^2.2.6",
     "codemirror": "^5.59.0",
     "docusaurus-lunr-search": "^3.4.0",
     "docusaurus-plugin-internaldocs-fb": "1.7.0",
-    "http-proxy-middleware": "2.0.9",
-    "image-size": "1.2.1",
+    "http-proxy-middleware": "2.0.10",
+    "image-size": "2.0.2",
     "parseuri": "^3.0.1",
     "prismjs": "1.30.0",
     "react": "^17.0.2",
@@ -36,7 +36,7 @@
     "react-trend": "^1.2.5",
     "react-youtube": "^7.14.0",
     "socket.io-client": "^4.3.2",
-    "socket.io-parser": "4.2.3"
+    "socket.io-parser": "4.2.7"
   },
   "resolutions": {
     "shelljs": "^0.8.5",
