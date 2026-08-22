@@ -11,12 +11,7 @@ import tempfile
 from pathlib import Path
 from typing import Optional, Sequence
 
-from .. import (
-    backend_arguments,
-    command_arguments,
-    frontend_configuration,
-    log,
-)
+from .. import backend_arguments, command_arguments, frontend_configuration, log
 from . import commands, start
 from .analyze import (
     _download_pyrefly_binary,
