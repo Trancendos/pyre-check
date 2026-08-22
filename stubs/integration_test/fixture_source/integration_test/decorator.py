@@ -7,7 +7,7 @@
 
 from typing import Callable
 
-from integration_test.taint import source, sink
+from integration_test.taint import sink, source
 
 from .logging_decorator import with_logging_with_helper, with_logging_without_helper
 

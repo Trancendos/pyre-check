@@ -7,7 +7,7 @@
 
 from typing import Iterable, TypeVar
 
-from integration_test.taint import source, sink
+from integration_test.taint import sink, source
 
 
 T = TypeVar("T")

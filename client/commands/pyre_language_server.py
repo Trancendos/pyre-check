@@ -19,31 +19,11 @@ import asyncio
 import dataclasses
 import logging
 from pathlib import Path
-from typing import (
-    Collection,
-    Dict,
-    List,
-    Mapping,
-    Optional,
-    Set,
-    Tuple,
-    Union,
-)
+from typing import Collection, Dict, List, Mapping, Optional, Set, Tuple, Union
 
-from .. import (
-    background_tasks,
-    error,
-    json_rpc,
-    log,
-    timer,
-)
+from .. import background_tasks, error, json_rpc, log, timer
 from ..language_server import connections, daemon_connection, features, protocol as lsp
-from . import (
-    commands,
-    daemon_querier,
-    server_state as state,
-    type_error_handler,
-)
+from . import commands, daemon_querier, server_state as state, type_error_handler
 from .daemon_querier import DaemonQueryFailure
 from .server_state import OpenedDocumentState
 
@@ -174,7 +154,9 @@ class PyreLanguageServer(PyreLanguageServerApi):
         parameters: Dict[str, object],
         activity_key: Optional[Dict[str, object]],
     ) -> None:
-        should_write_telemetry = self.server_state.server_options.language_server_features.telemetry.is_enabled()
+        should_write_telemetry = (
+            self.server_state.server_options.language_server_features.telemetry.is_enabled()
+        )
         if should_write_telemetry:
             parameters = dict(parameters)
             parameters["project_identifier"] = (
@@ -352,7 +334,9 @@ class PyreLanguageServer(PyreLanguageServerApi):
         daemon_status_before = self.server_state.status_tracker.get_status()
         did_change_timer = timer.Timer()
 
-        process_unsaved_changes = self.server_state.server_options.language_server_features.unsaved_changes.is_enabled()
+        process_unsaved_changes = (
+            self.server_state.server_options.language_server_features.unsaved_changes.is_enabled()
+        )
         error_message = None
         code_changes = str(
             "".join(

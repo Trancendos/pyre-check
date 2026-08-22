@@ -25,7 +25,7 @@ import sys
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, List, Union, Optional, Callable, TypeVar
+from typing import Any, Callable, Dict, List, Optional, TypeVar, Union
 
 
 LOG: logging.Logger = logging.getLogger(__name__)
@@ -634,7 +634,7 @@ class Test:
             "name": "Possible shell injection",
             "path": "fixture_source/integration_test/cache.py",
             "stop_column": 21,
-            "stop_line": 87
+            "stop_line": 87,
         }
         new_expected = copy.deepcopy(self.expected)
         new_expected.remove(issue)
@@ -871,7 +871,9 @@ class Test:
         # Save contents for cleanup phase
         original_content = open(test_model_path).read()
         try:
-            new_model = "integration_test.cache.Token.token: TaintSource[UserControlled] = ..."
+            new_model = (
+                "integration_test.cache.Token.token: TaintSource[UserControlled] = ..."
+            )
             open(test_model_path, "w").write(f"{original_content}\n{new_model}")
         except FileNotFoundError:
             LOG.warning(f"Could not update {test_model_path.absolute()}.")
