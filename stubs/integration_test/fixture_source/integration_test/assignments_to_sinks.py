@@ -6,7 +6,7 @@
 # flake8: noqa
 
 import pyre
-from integration_test.taint import source, sink
+from integration_test.taint import sink, source
 
 
 # Integration test illustrating how we deal with assignments to sinks.

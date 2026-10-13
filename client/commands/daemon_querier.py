@@ -22,15 +22,8 @@ from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Union
 
 from .. import dataclasses_json_extensions as json_mixins, error
-from ..language_server import (
-    daemon_connection,
-    protocol as lsp,
-)
-from . import (
-    daemon_query,
-    expression_level_coverage,
-    server_state as state,
-)
+from ..language_server import daemon_connection, protocol as lsp
+from . import daemon_query, expression_level_coverage, server_state as state
 
 LOG: logging.Logger = logging.getLogger(__name__)
 
@@ -152,7 +145,9 @@ class ServerStateBackedDaemonQuerier(AbstractDaemonQuerier):
         return self.server_state.server_options.get_socket_path()
 
     def is_unsaved_changes_enabled(self) -> bool:
-        return self.server_state.server_options.language_server_features.unsaved_changes.is_enabled()
+        return (
+            self.server_state.server_options.language_server_features.unsaved_changes.is_enabled()
+        )
 
 
 # TODO(T184611575) Clean up dead code in PersistentDaemonQuerier
