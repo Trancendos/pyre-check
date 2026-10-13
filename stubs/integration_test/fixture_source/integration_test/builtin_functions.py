@@ -5,7 +5,7 @@
 
 # flake8: noqa
 
-from integration_test.taint import source, sink
+from integration_test.taint import sink, source
 
 
 def test_enumerate():

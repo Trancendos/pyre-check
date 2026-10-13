@@ -3,7 +3,7 @@
 # This source code is licensed under the MIT license found in the
 # LICENSE file in the root directory of this source tree.
 
-from integration_test.taint import source, sink
+from integration_test.taint import sink, source
 
 
 def concatenate_lhs():
