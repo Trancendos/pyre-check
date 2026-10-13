@@ -1,5 +1,5 @@
-Flask==2.3.3
+Flask==3.1.3
 lxml
 jsonpickle
 requests
-Werkzeug==3.1.5
+Werkzeug==3.1.9
